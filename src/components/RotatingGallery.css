@@ -1,0 +1,130 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.gallery-container {
+  width: 100%;
+  height: calc(100vh - 50px);
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.gallery-container h2 {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin: 0;
+  z-index: 10;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(50px);
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -300px;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  padding: 2rem;
+  color: white;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.carousel-info h3 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-info p {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  color: #0066cc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .carousel-item {
+    width: 300px;
+    height: 450px;
+    margin-left: -150px;
+    margin-top: -225px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container h2 {
+    font-size: 2rem;
+    top: 10px;
+  }
+
+  .carousel-item {
+    width: 250px;
+    height: 375px;
+    margin-left: -125px;
+    margin-top: -187.5px;
+  }
+  
+  .carousel-info {
+    padding: 1.5rem;
+  }
+
+  .carousel-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-info p {
+    font-size: 1rem;
+  }
+} 
